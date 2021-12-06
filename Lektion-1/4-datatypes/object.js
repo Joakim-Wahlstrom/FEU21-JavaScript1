@@ -61,3 +61,26 @@ key = 'age';
 // console.log(user['lastName']);
 // console.log(user[key]);
 
+
+// konvertera till JSON
+let json = JSON.stringify(user);
+// console.log(json);
+
+// konvertera från JSON till JS
+let js = JSON.parse(json);
+console.log(js);
+
+user.firstName = 'Joakim';
+
+console.log(`Användaren heter ${user.firstName} ${user.lastName} och bor i ${user.address.city}.`)
+
+// user.firstName = 'Jeanette';
+// console.log(`Användaren heter ${user.firstName} ${user.lastName} och bor i ${user.address.city}.`)
+
+
+// Destructure
+const { firstName, lastName, address: {city} } = user;
+// const firstName = user.firstName;
+
+console.log(firstName)
+console.log(`Användaren heter ${firstName} ${lastName} och bor i ${city}.`)
