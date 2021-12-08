@@ -121,9 +121,9 @@ const obj3 = {
 
 
 const newNames = ['Ca', 'Bb', '1a', '2a', 'aa', 'bb'];
-const numbers = [5, 6, 7, 8, 2, 1, 9, 10, 11, 12, 30, 40];
+// const numbers = [1, 2, 3, 4];
 
-console.log(names);
+// console.log(names);
 
 // names.sort();   // Sortera i bokstavsordning
 // console.log(names);
@@ -134,10 +134,39 @@ console.log(names);
 // console.log(names);
 
 newNames.sort();
-console.log(newNames);
+// console.log(newNames);
 
-numbers.sort((a, b) => {
-  return a - b;
-});
+// numbers.sort((a, b) => {
+//   return a - b;
+// });
 
-console.log(numbers);
+// console.log(numbers);
+
+
+// High Order Array Methods
+// En high order method tar entingen emot eller returnerar en funktion
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// const sum = numbers.reduce(function(acc, current) {
+//   // console.log('acc: ' + acc, 'current: ' + current);
+//   return acc + current;
+// })
+
+// const filteredArray = numbers.filter(num => {
+//   return num < 6;
+// })
+
+// console.log(filteredArray);
+// console.log(sum);
+
+// const mappedArray = numbers.map((num, index) => {
+//   return `index: ${index} - nummer: ${num}`
+// })
+// console.log(mappedArray);
+
+// numbers.forEach(num => {
+//   num = num + 3
+// })
+
+// console.log(numbers);
