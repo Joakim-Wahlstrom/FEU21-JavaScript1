@@ -126,3 +126,74 @@ let num1 = '23';
 
 // console.log(value += 2); // Manipulerar ursprungsvärdet
 // console.log(value)
+
+
+// console.log(Number(10));
+// console.log(Number('10'));
+// console.log(Number('10.23'));
+// console.log(Number('10,23'));
+// console.log(Number('Joakim'));
+// console.log(Number('                        10.23'));
+// console.log(Number('10 23'));
+
+// console.log(parseInt('23h'));
+// console.log(parseInt('23   haasd  234'));
+
+
+// console.log(Math.PI);
+// console.log(Math.sqrt(4));
+// console.log(Math.random() * 100);
+
+// function random(min, max) {
+//   const num = Math.floor(Math.random() * (max - min +1)) + min;
+//   return num;
+// }
+
+// console.log(random(1, 25));
+
+
+// OBJECT
+
+const user = {
+  firstName: 'Joakim',
+  account: {
+    email: 'joakim@mail.com',
+    password: 'BytMig123'
+  }
+};
+
+user.lastName = 'Wahlström';
+user.account.password = '12345';
+
+// let q = new URLSearchParams(window.location.search).get('q')
+
+// console.log(q)
+// console.log(user.firstName);
+// console.log(user[q]);
+
+
+// JSON JavaScript Object Notation
+// json = '{"firstName": "Joakim", "lastName": "Wahlström"}'
+
+const json = JSON.stringify(user);
+const js = JSON.parse('{"firstName": "Joakim", "lastName": "Wahlström"}');
+
+// console.log(user);
+// console.log(json);
+// console.log(js);
+
+// ta bort ett värde
+// delete user.account;
+// console.log(user)
+
+
+// destructure
+const { firstName, lastName } = user;
+const { firstName: fName, lastName: lName } = js;
+
+let text = `Hej jag heter ${firstName} ${lastName}`;
+let text3 = `Hej jag heter ${fName} ${lName}`;
+let text2 = `Hej jag heter ${user.firstName} ${user.lastName}`;
+console.log(text);
+console.log(text2);
+console.log(text3);
