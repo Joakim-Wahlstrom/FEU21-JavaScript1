@@ -109,9 +109,95 @@ let sum = calc(10, 15);
 // sum = calc();
 sum = calc('3', '10');
 
-console.log(sum);
+// console.log(sum);
 
 const input = document.querySelector('#input');
-console.log(input.value)
-console.log(typeof input.value)
+// console.log(input.value)
+// console.log(typeof input.value)
 
+
+// ARROW FUNCTIONS
+
+// const calc2 = (num1 = 0, num2 = 0) => {
+//   // let sum = +num1 + +num2
+//   return sum
+// }
+
+const calc2 = (num1, num2) => num1 + num2;
+
+// console.log(calc2(3, 6))
+
+// const greet2 = name => `Hej ${name}.`;
+const greet2 = () => `Hejsan.`;
+
+// console.log(greet2('Hans'))
+
+// console.log(this)
+
+// En arrow function bider inte om nyckelordet "this"
+
+
+
+// Methods - funktioner som hör ihop med ett objekt
+
+let myName = 'Joakim';
+let upper = myName.toUpperCase();
+
+let user = {
+  firstName: 'Joakim',
+  lastName: 'Wahlström',
+  fullName() {
+    return this.firstName + ' ' + this.lastName;
+  },
+  // arrow: () => {
+  //   console.log('arrow function ', this);
+  // },
+  // function: function() {
+  //   console.log('regular function ', this);
+  // }
+}
+
+// user.arrow()
+// user.function()
+
+// console.log(user.fullName())
+
+
+
+// CALLBACK FUNCTIONS
+
+// Exempel på callback function
+// let names = ['Joakim', 'Hans', 'Tommy'];
+
+// names.forEach(name => {
+//   console.log(name)
+// })
+
+// cb = callbackFunction
+// const minFunktion = (cb) => {
+//   let val = 25;
+//   cb(val);
+// }
+
+// minFunktion(value => {
+//   console.log(value)
+// })
+
+
+const func5 = (nr1 = 0, nr2 = 0, cb) => {
+  let sum = nr1 + nr2
+
+  cb(sum)
+}
+
+let sumOfAllResults = 0;
+
+func5(1, 1, result => {
+  sumOfAllResults += result;
+})
+func5(1,1, res => {
+  console.log('res ', res);
+  sumOfAllResults += res;
+})
+
+console.log(sumOfAllResults);
