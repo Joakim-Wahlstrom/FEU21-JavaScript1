@@ -62,13 +62,13 @@ const person = array.find((p) => {
 
 const family = ['Joakim', 'Jeanette', 'Liam', 'Wille', 'Jack', 'Colin', 'Vince'];
 
-family.sort();
+family.sort().reverse();
 
-console.log(family);
+// console.log(family);
 
 family.splice(family.indexOf('Joakim') + 1, 0, 'Hans', 'Tommy');
 
-console.log(family)
+// console.log(family)
 
 
 
@@ -77,14 +77,78 @@ let familyMember = family.pop();
 // console.log(familyMember);
 family.unshift(familyMember);
 
-console.log(family);
+// console.log(family);
 
 
 
 let counter = 0;
 family.forEach(() => {
   counter++;
-  console.log(counter);
+  // console.log(counter);
 })
 
-console.log(family.length);
+// console.log(family.length);
+
+const greetings = family.map(name => {
+  return 'Hejsan ' + name;
+})
+
+greetings.forEach(greet => {
+  // console.log(greet);
+})
+
+// let selected = array.map(person => {
+//   return person.lastName == 'Wahlström';
+// })
+
+// let selected = array.filter(person => {
+//   return person.lastName == 'Wahlström';
+// })
+
+// let selected = array
+// .filter(person => person.lastName == 'Wahlström')
+// .map(person => person.firstName)
+// .sort();
+
+// let selected = array.filter(person => {
+//   return person.lastName == 'Wahlström';
+// })
+// .map(person => {
+//   return person.firstName;
+// })
+// .sort();
+
+// console.log(selected);
+
+// const shoppingList = ['mjölk', 'ägg', 'bröd'];
+
+// console.log(shoppingList.includes('smör'));
+
+
+// SET
+
+const shoppingList = new Set();
+shoppingList.add('mjölk');
+shoppingList.add('ägg');
+shoppingList.add('smör');
+shoppingList.add('ägg');
+shoppingList.add('ägg');
+shoppingList.add('ägg');
+shoppingList.add('ägg');
+shoppingList.add('bröd');
+
+
+console.log(shoppingList);
+
+// const list = [];
+shoppingList.forEach(item => {
+  // console.log(item);
+  // list.push(item);
+})
+
+// const list = Array.from(shoppingList);
+const list = [...shoppingList];
+
+console.log(list);
+
+
