@@ -34,33 +34,51 @@ const validateEmail = (emailInput) => {
   }
 }
 
+email.addEventListener('keyup', () => {
+  // console.log(email.classList)
+  const list = [...email.classList]
+  // console.log(list)
+  if(list.includes('is-invalid')) {
+    validateEmail(email)
+  }
+})
+
 
 regForm.addEventListener('submit', e => {
   e.preventDefault();
 
-  validateText('#firstName')
-  validateText('#lastName') 
-  validateEmail(email)
+  // validateText('#firstName')
+  // validateText('#lastName') 
+  // validateEmail(email)
 
-    // for(let i = 0; i < e.currentTarget.length; i++ ) {
-    //   if(e.currentTarget[i].type === "text") {
-    //     validateText('#' + e.currentTarget[i].id);
-    //   }
-    //   else if(e.currentTarget[i].type === "email") {
-    //     validateEmail(email);
-    //   }
-    // }
+  // if( 
+  //   validateText('#firstName') && 
+  //   validateText('#lastName') && 
+  //   validateEmail(email) ) {
 
+  //     console.log('Success');
+  // }
+  // else {
+  //   console.log('nope försök igen')
+  // }
 
-  if( 
-    validateText('#firstName') && 
-    validateText('#lastName') && 
-    validateEmail(email) ) {
+  const errors = [];
 
-      console.log('Success');
-  }
-  else {
-    console.log('nope försök igen')
-  }
+    for(let i = 0; i < e.currentTarget.length; i++ ) {
+      if(e.currentTarget[i].type === "text") {
+        errors[i] = validateText('#' + e.currentTarget[i].id);
+      }
+      else if(e.currentTarget[i].type === "email") {
+        errors[i] = validateEmail(email);
+      }
+    }
 
+    console.log(errors)
+
+    if(errors.includes(false)) {
+      console.log('inte bra')
+    }
+    else {
+      console.log('allt är super bra')
+    }
 })
