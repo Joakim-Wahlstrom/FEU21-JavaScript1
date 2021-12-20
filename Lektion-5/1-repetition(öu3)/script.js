@@ -78,13 +78,29 @@ const namesArray = ['Joakim', 'Hans', 'Tommy', 'Jeanette'];
 
 
 
-let namesDIV = document.createElement('div');
-namesDIV.id = 'names';
+// let namesDIV = document.createElement('div');
+// namesDIV.id = 'names';
 
-document.body.appendChild(namesDIV);
+// document.body.appendChild(namesDIV);
 
-namesArray.forEach(name => {
-  let p = document.createElement('p');
-  p.innerText = name;
-  namesDIV.appendChild(p);
+// namesArray.forEach(name => {
+//   let p = document.createElement('p');
+//   p.innerText = name;
+//   namesDIV.appendChild(p);
+// })
+
+const form = document.querySelector('#form');
+const btn = document.querySelector('#btn');
+const input = document.querySelector('#input');
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  console.log(input.value);
+  input.value = '';
 })
+
+// btn.addEventListener('click', e => {
+//   e.preventDefault();
+//   console.log(input.value);
+//   input.value = '';
+// })
