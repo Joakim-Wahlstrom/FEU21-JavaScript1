@@ -1,6 +1,6 @@
-const todos = [
+let todos = [
   {
-    id: '1',
+    id: 'asd',
     title: 'Todo One',
     completed: false
   },
@@ -24,15 +24,27 @@ const listTodos = () => {
   output.innerHTML = '';
   todos.forEach(todo => {
     output.innerHTML += `
-      <div class="d-flex justify-content-between align-items-center border bg-white p-2 mb-2">
+      <div id="${todo.id}" class="d-flex justify-content-between align-items-center border bg-white p-2 mb-2">
         <p class="m-0 h4">${todo.title}</p>
-        <button class="btn btn-danger btn-sm">X</button>
+        <button type="button" class="btn btn-danger btn-sm">X</button>
       </div>
-    `
+    `;
+    
   })
+
+  // const buttons = document.querySelectorAll('.btn-danger');
+  // buttons.forEach(button => {
+  //   button.addEventListener('click', () => {
+  //     console.log(button.id)
+  //     todos = todos.filter(todo => todo.id !== button.id);
+  //     listTodos();
+  //   })
+  // })
 }
 
 listTodos();
+
+
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -54,4 +66,12 @@ form.addEventListener('submit', (e) => {
     input.classList.add('is-invalid');
   }
 
+})
+
+output.addEventListener('click', e => {
+  // console.log(e.target.parentNode.id)
+  if(e.target.type === 'button') {
+    todos = todos.filter(todo => todo.id !== e.target.parentNode.id);
+    listTodos();
+  }
 })
