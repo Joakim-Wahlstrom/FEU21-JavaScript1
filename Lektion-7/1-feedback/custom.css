@@ -142,3 +142,8 @@ html, body {
 .is-valid .fa-check-circle {
   display: block;
 }
+
+.tip {
+  color: #696969;
+  font-size: .8rem;
+}
