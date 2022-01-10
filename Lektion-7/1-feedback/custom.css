@@ -1,5 +1,8 @@
 :root {
   --clr-primary: #c7c7c7;
+  --clr-error: #db1010;
+  --clr-sucess: #14ac06;
+  --border-radius: 1rem;
 }
 
 * {
@@ -20,10 +23,28 @@ html, body {
   justify-content: center;
 }
 
+.btn {
+  padding: .8em 1.4em;
+  border-radius: var(--border-radius);
+  border: 0;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-block {
+  width: 100%;
+}
+.btn-primary {
+  background-color: var(--clr-primary);
+  color: #000;
+}
+
+
 #regForm {
   background-color: #fafafa;
   padding: 1rem;
-  border-radius: 1rem;
+  border-radius: var(--border-radius);
   min-width: 400px;
   box-shadow: 3px 3px 5px #0000002f;
 }
@@ -38,9 +59,10 @@ html, body {
   padding: 1.5rem;
 }
 
-.input-group {
-  margin-bottom: 1rem; /*! justera senare vid behov */
-
+.input-group,
+.input-group-check {
+  margin-bottom: 1rem;
+  position: relative;
 }
 
 .input-group .input-label,
@@ -56,7 +78,7 @@ html, body {
 
 .input-group .form-control {
   padding: .6rem .5rem;
-  border-radius: .7rem;
+  border-radius: var(--border-radius);
   border: 1px solid var(--clr-primary);
 
 }
@@ -65,20 +87,50 @@ html, body {
   outline: 1px solid #888888;
 }
 
-.input-group .invalid-input {
-  margin-top: .3rem;
-  color: #db1010;
+.input-group .invalid-input,
+.input-group-check .invalid-input {
+  margin-top: .2rem;
+  color: var(--clr-error);
   font-size: .9rem;
-  /* display: none; */
-  visibility: hidden;
+  display: none;
+  /* visibility: hidden; */
 }
 
 .is-invalid .form-control {
-  border: 1px solid #db1010;
-  outline: 1px solid #db1010;
+  border: 1px solid var(--clr-error);
+  outline: 1px solid var(--clr-error);
 }
 
 .is-invalid .invalid-input {
-  /* display: block; */
-  visibility: visible;
+  display: block;
+  /* visibility: visible; */
+}
+
+.is-valid .form-control {
+  border: 1px solid var(--clr-sucess);
+  outline: 1px solid var(--clr-sucess);
+}
+
+.fa-times-circle {
+  color: var(--clr-error);
+}
+.fa-check-circle {
+  color: var(--clr-sucess);
+}
+
+.fa-times-circle,
+.fa-check-circle {
+  position: absolute;
+  right: .5rem;
+  top: 2.3rem;
+  font-size: 1.1rem;
+  display: none;
+}
+
+.is-invalid .fa-times-circle {
+  display: block;
+}
+
+.is-valid .fa-check-circle {
+  display: block;
 }
