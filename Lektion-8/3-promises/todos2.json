@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Äta lunch",
+    "completed": true
+  },
+  {
+    "id": 2,
+    "title": "Lära oss javascript",
+    "completed": false
+  },
+  {
+    "id": 3,
+    "title": "Skotta snö",
+    "completed": false
+  }
+]

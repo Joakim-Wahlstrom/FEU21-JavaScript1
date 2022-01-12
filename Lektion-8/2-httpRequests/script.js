@@ -30,17 +30,26 @@ const getRequest = (endpoint, cb) => {
 }
 
 
-console.log(1);
-console.log(2);
+
+
+
+// getRequest('user.json', (err, data) => {
+//   if(err) {
+//     console.log(err)
+//     return
+//   }
+
+//   console.log(data)
+
+// })
+
 
 getRequest('user.json', (err, data) => {
-  if(err) {
-    console.log(err)
-    return
-  }
-  document.body.innerText = data.lastName
   console.log(data)
+  getRequest('todos.json', (err, data) => {
+    console.log(data)
+    getRequest('todos2.json', (err, data) => {
+      console.log(data)
+    })
+  })
 })
-
-console.log(3);
-console.log(4);
