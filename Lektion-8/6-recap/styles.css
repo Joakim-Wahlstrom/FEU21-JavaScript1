@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 800px;
+}
+.btn {
+  padding: .8em 1.6em;
+  border-radius: .7em;
+  background: transparent;
+  border: transparent;
+  cursor: pointer;
+}
+.btn-primary {
+  background-color: rebeccapurple;
+  color: #fff;
+}
+.error {
+  color: red;
+  font-weight: 700;
+}
+
+.card {
+  margin-block: 1rem;
+  padding: 1rem;
+  border: 1px solid #333;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.336);
+}
+.card h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
