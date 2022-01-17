@@ -45,10 +45,11 @@ const createTodoElement = todo => {
 
 function removeTodo(id, todo) {
   todos = todos.filter(todo => todo.id !== id)
-  // listTodos()
+  listTodos()
   // DELETE from db
   //if()
-  todo.remove()
+  // todo.remove()
+  console.log(todos)
 }
 
 
@@ -65,7 +66,10 @@ const createNewTodo = title => {
   })
   .then(res => res.json())
   .then(data => {
-    console.log(data)
+    // console.log(data)
+    todos.unshift(data);
+    listTodos()
+    // output.prepend(createTodoElement(data))
   })
 }
 
@@ -76,5 +80,6 @@ form.addEventListener('submit', e => {
     createNewTodo(input.value);
     input.value = '';
     input.focus()
+
   }
 })
