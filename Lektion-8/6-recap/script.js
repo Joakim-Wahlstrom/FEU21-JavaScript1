@@ -27,36 +27,70 @@ txtBtn.addEventListener('click', () => {
 
 let posts = [];
 
-const getJson = url => {
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      posts = data;
-      // data.forEach(post => posts.push(post))
-      // data.forEach((post, index) => {
-      //   posts[index] = post
-      // })
+// const getJson = url => {
+//   fetch(url)
+//     .then(res => res.json())
+//     .then(data => {
+//       posts = data;
+//       // data.forEach(post => posts.push(post))
+//       // data.forEach((post, index) => {
+//       //   posts[index] = post
+//       // })
 
-      jsonOutput.innerHTML = ''
-      posts.forEach(post => {
-        jsonOutput.innerHTML += `
-        <div class="card">
-          <h3>${post.title}</h3>
-          <p>${post.body}</p>
-        </div>
-        `
-      })
-    })
-    .catch(err => {
-      console.log(err)
-      jsonOutput.classList.add('error')
-      jsonOutput.innerText = 'kan inte hämta datan' 
-    })
-}
+//       jsonOutput.innerHTML = ''
+//       posts.forEach(post => {
+//         jsonOutput.innerHTML += `
+//         <div class="card">
+//           <h3>${post.title}</h3>
+//           <p>${post.body}</p>
+//         </div>
+//         `
+//       })
+//     })
+//     .catch(err => {
+//       console.log(err)
+//       jsonOutput.classList.add('error')
+//       jsonOutput.innerText = 'kan inte hämta datan' 
+//     })
+// }
 
 // getJson('json.json')
 
+
+
+const getJsonAsync = async () => {
+  // try{
+    const res = await fetch('json.json')
+
+    // if(res.status !== 200) {
+    //   throw new Error('kan inte hämta datan')
+    // }
+
+    posts = await res.json();
+
+    jsonOutput.innerHTML = ''
+    posts.forEach(post => {
+      jsonOutput.innerHTML += `
+      <div class="card">
+        <h3>${post.title}</h3>
+        <p>${post.body}</p>
+      </div>
+      `
+    })
+  // }
+  // catch(err) {
+  //   jsonOutput.classList.add('error')
+  //   jsonOutput.innerText = err.message 
+  // }
+
+}
+
 jsonBtn.addEventListener('click', () => {
-  getJson('json.json')
-    
+  // getJson('json.json')
+    getJsonAsync()
+      // .catch(err => {
+      //   jsonOutput.classList.add('error')
+      //   // jsonOutput.innerText = 'kan inte hämta datan' 
+      //   jsonOutput.innerText = err.message 
+      // })
 })
