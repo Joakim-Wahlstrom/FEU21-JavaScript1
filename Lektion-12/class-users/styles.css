@@ -1,7 +1,9 @@
 .animate {
   animation: slide-in 0.5s ease-out;
 }
-
+.slideout {
+  animation: slide-out 0.5s ease-out;
+}
 
 @keyframes slide-in {
   from {
